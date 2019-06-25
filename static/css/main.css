@@ -1,0 +1,167 @@
+thead {
+    background-color: white;
+    color: black;
+}
+
+body {
+    background:whitesmoke;
+
+}
+
+.sidenav {
+    background: white;
+}
+
+.nav-wrapper {
+    background: white;
+}
+
+.nav-bar {
+    margin-bottom:3em;
+}
+
+
+.subheader1:hover {
+    background-color: lightgrey;
+    color:black;
+}
+
+.subheader1:hover {
+    color:black;
+}
+
+.activePath {
+    border-left: 5px solid #e91e63;
+}
+
+
+table {
+    margin-bottom: 4em;
+}
+
+#cpTable {
+    width: 100%;
+}
+
+#modal1-employee {
+    width: 61%;
+}
+
+hr{ 
+    height: 1px;
+    color: lightgray;
+    background-color: lightgray;
+    border: none;
+}
+
+.tabs .tab a{
+    color:#000;
+} /*Black color to the text*/
+
+.tabs .tab a:hover {
+    background-color:#eee;
+    color:#e91e63;
+} /*Text color on hover*/
+
+.tabs .tab a:focus.active {
+    background-color: whitesmoke;
+    color:#e91e63;
+} /*Background and text color when a tab is active*/
+
+.tabs .indicator {
+    background-color:#e91e63;
+} /*
+
+
+/* label focus color */
+.input-field input:focus + label {
+    color:grey !important;
+  }
+  /* label underline focus color */
+.input-field input:focus {
+    border-bottom: 1px solid #e91e63 !important;
+    box-shadow: 0 1px 0 0 #e91e63 !important
+}
+
+
+.input-field textarea:focus + label {
+    color:grey !important;
+  }
+  /* label underline focus color */
+.input-field textarea:focus {
+    border-bottom: 1px solid #e91e63 !important;
+    box-shadow: 0 1px 0 0 #e91e63 !important
+}
+
+.card {
+    border-radius: 0.5em;
+}
+
+.tabs {
+    border-radius: 0.5em;
+}
+
+.collection {
+    border-radius: 0.5em;
+}
+
+.btn {
+    border-radius: 10em;
+    background: #e91e63;
+}
+
+.btn:hover {
+    border-radius: 10em;
+    background: #e91e63;
+}
+
+.btn:active  {
+    border-radius: 10em;
+    background: #e91e63;
+}
+
+.btn:focus  {
+    border-radius: 10em;
+    background: #e91e63;
+}
+
+
+.modal { width: 75% !important }
+
+.datepicker-date-display {
+    background: #e91e63;
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+  border: 2px solid #e91e63;
+}
+ 
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:after {
+  background-color: #e91e63;
+}
+
+.uploadCard {
+    background: #e91e63;
+    color:white;
+}
+
+.loginGithub {
+    background: #e91e63;
+    color:white;
+}
+
+.contractTitleList {
+    color: #e91e63;
+}
+.chip {
+    color: #e91e63;
+}
+
+
+
+
+
+
