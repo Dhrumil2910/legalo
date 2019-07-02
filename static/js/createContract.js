@@ -45,10 +45,13 @@ $(document).ready(function () {
         dateOfCompletion = $('#dateOfCompletion').val()
         // Add it to the global json object
         serviceJsonObject = {
+            "$class": "org.example.basic.Stages",
             "stageId": stageId,
             "stageName": stageName,
             "stageDescription": stageDesp,
             "stageAmount": parseInt(stageAmount, 10),
+            "finished": false,
+            "paid": false,
             "dateOfStart": dateOfStart,
             "dateOfCompletion": dateOfCompletion
         };
@@ -91,4 +94,19 @@ $(document).ready(function () {
         })
 
     })
+
+
+    $(document).on("click", "#fetchServicePro", function () {
+        // Service Provider Information
+        serviceProviderId = $('#sfirst_name').val()
+        // Buyer Information
+        buyerId = firstName
+        // Services and Payment
+        servicesObjList = allServices
+        // Special Provisions
+        rightToCancel = s
+        // Final Details
+    })
+
+
 })

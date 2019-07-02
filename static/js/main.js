@@ -1,11 +1,12 @@
 $(document).ready(function () {
-
     // Make all the buttons black by changing the class
     $('.progress').css("display", "none");
 
     path = location.pathname.replace("/", "")
-    $('.' + path + 'Path').addClass('active activePath')
-
+    // check if the location is like contract/contractId
+    if(path.indexOf("contract") == -1){
+        $('.' + path + 'Path').addClass('active activePath')
+    }
 
     // Get the current Participant
     curParUrl = "http://localhost:3000/api/system/ping"

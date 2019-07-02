@@ -5,21 +5,16 @@ thead {
 
 body {
     background:whitesmoke;
-
 }
-
 .sidenav {
     background: white;
 }
-
 .nav-wrapper {
     background: white;
 }
-
 .nav-bar {
     margin-bottom:3em;
 }
-
 
 .subheader1:hover {
     background-color: lightgrey;
@@ -126,8 +121,6 @@ hr{
 }
 
 
-.modal { width: 75% !important }
-
 .datepicker-date-display {
     background: #e91e63;
 }
@@ -143,6 +136,15 @@ hr{
   background-color: #e91e63;
 }
 
+
+
+.contractTitleList {
+    color: #e91e63;
+}
+.chip {
+    color: #e91e63;
+}
+
 .uploadCard {
     background: #e91e63;
     color:white;
@@ -153,11 +155,18 @@ hr{
     color:white;
 }
 
-.contractTitleList {
-    color: #e91e63;
+.fundEnd {
+    background: #e91e63;
+    color:white;
 }
-.chip {
-    color: #e91e63;
+
+.headingBalanceContract {
+    background: #e91e63;
+    color:white;
+}
+
+.modal{
+    width: 50%;
 }
 
 
