@@ -4,6 +4,8 @@ $(document).ready(function () {
 
     // Get the contract details
     getContractUrl = "http://localhost:3000/api/org.example.basic.BusinessContract/" + contractId
+    //start the loader
+    $('.loader').css("display", "block");
 
     // ajax GET call
     $.ajaxCall(getContractUrl, "GET", "", function (output) {
@@ -55,15 +57,32 @@ $(document).ready(function () {
             })
             // Stages of contract
             $.each(out.stages, function (i) {
-                $(".stagesInViewForm").append('<li class="collection-item">\
-                <span class="title" style="color:#e91e63"><b>'+ out.stages[i].stageName + '</b></span> &nbsp\
-                <div class="chip right fundEnd">Fund Stage</div>\
-                <div class="chip right">End Stage</div>\
-                <div class="chip right">Amount:&nbsp'+ out.stages[i].stageAmount + '</div><br><br><br>\
-                <p style="color: grey">dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds '+ out.stages[i].stageDescription + '<br><br><br>\
+                if( out.stages[i].finished == false ){
+                    finVar = "Stage incomplete"
+                }
+                else {
+                    finVar = "Stage Completed"
+                }
+                if( out.stages[i].paid == false ){
+                    paidVar = "Stage not funded"
+                }
+                else {
+                    paidVar = "Stage funded"
+                }
+                $(".stagesInViewForm").append('<li class="collection-item card" id="'+ out.stages[i].stageId +'">\
+                <div class="card-content">\
+                <span class="card-title" style="color:#e91e63"><b>'+ out.stages[i].stageName + '</b> &nbsp\
+                <div class="chip  right fundEnd" id="'+ out.stages[i].stageId +'-fund">Fund Stage</div>\
+                <div class="chip white right">End Stage</div>\
+                <div class="chip white right">Amount:&nbsp'+ out.stages[i].stageAmount + '</div></span><br><br>\
+                <p style="color: black">dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds '+ out.stages[i].stageDescription + '<br><br><br>\
                 Start Date:&nbsp'+ out.stages[i].dateOfStart+'<br>\
                 End Date:&nbsp'+ out.stages[i].dateOfCompletion+'\
-                </p>\
+                </p></div>\
+                <div class="card-action">\
+                <div class="chip"> '+ finVar +'</div>\
+                <div class="chip"> '+ paidVar +'</div>\
+                </div>\
                 </li>')
             })
             // Right to cancel and additional provisions
@@ -85,6 +104,35 @@ $(document).ready(function () {
         else {
             M.toast({ html: 'Not able to retrieve the contract details' })
         }
+        $('.loader').css("display", "none");
+    })
+
+
+    // Fund a stage
+    $(document).on("click", ".fundEnd", function () {
+        stageId = parseInt($(this).attr("id").replace("-fund",""))
+        fundStageUrl = "http://localhost:3000/api/org.example.basic.fundAStage"
+        postDataFundStage = {
+            "businessContract": "resource:org.example.basic.BusinessContract#"+out.businessContractId,
+            "stageId": stageId
+        }
+        // start the loader
+        $('.loader').css("display", "block");
+
+        // ajax POST call
+        $.ajaxCall(fundStageUrl, "POST", JSON.stringify(postDataFundStage), function (output) {
+            if(output.status){
+                M.toast({ html: 'Stage Funded' })
+                location.reload()
+            }
+            else {
+                M.toast({ html: 'Not able to fund the stage' })
+            }
+            // end the loader
+            $('.loader').css("display", "none");
+            
+        }) 
+        
     })
 
 });

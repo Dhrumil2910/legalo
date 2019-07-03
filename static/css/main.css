@@ -160,6 +160,12 @@ hr{
     color:white;
 }
 
+.seeDetails {
+    background: #e91e63;
+    color:white;
+}
+
+
 .headingBalanceContract {
     background: #e91e63;
     color:white;
@@ -169,7 +175,29 @@ hr{
     width: 50%;
 }
 
+.loader {
+    width: 50%;
+    position: relative;
+}
 
+.loader-li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    bottom: 7em;
+    left:7em;
+    position: fixed;
+}
+
+input:disabled{
+    color: grey !important; 
+}
+
+textarea:disabled{
+    color: grey !important; 
+}
 
 
 

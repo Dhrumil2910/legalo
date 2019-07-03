@@ -1,6 +1,7 @@
 $(document).ready(function () {
     // Make all the buttons black by changing the class
     $('.progress').css("display", "none");
+    $('.loader').css("display", "none");
 
     path = location.pathname.replace("/", "")
     // check if the location is like contract/contractId
