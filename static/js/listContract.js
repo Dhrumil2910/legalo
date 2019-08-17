@@ -10,10 +10,12 @@ $(document).ready(function () {
               <div class="card-content">\
               <span class="card-title contractTitleList"><b>'+ output.output[i].contractTitle +'</b> &nbsp\
               <div class="chip right seeDetails"><a style="color:white" href="/contract/'+ output.output[i].businessContractId +'">See Details</a></div>\
-              <div class="chip right">Balance:&nbsp'+ output.output[i].contractBalance +'</div>\
+              <div class="chip white right">Contract Balance:&nbsp'+ output.output[i].contractBalance +'</div>\
               </span>\
-              <p style="color: grey"> '+ output.output[i].additionalDescription +'<br><br>Service Provider:&nbsp'+ output.output[i].serviceProvider.replace('resource:org.example.basic.Person#','') +' <br>Buyer:&nbsp\
-              '+ output.output[i].buyer.replace('resource:org.example.basic.Person#','') +'<br> Start Date:&nbsp'+ output.output[i].dateOfContract +'<br> Expiry Date:&nbsp'+ output.output[i].dateOfExpiry +' \
+              <p style="color: black"> '+ output.output[i].additionalDescription +'<br><br><p style="color:grey; display:inline-block">Service Provider:&nbsp&nbsp&nbsp</p><p style="color:black; display:inline-block">'+ output.output[i].serviceProvider.replace('resource:org.example.basic.Person#','') +'</p> <br>\
+              <p style="color:grey; display:inline-block">Buyer:&nbsp&nbsp&nbsp</p><p style="color:black; display:inline-block">'+ output.output[i].buyer.replace('resource:org.example.basic.Person#','') +'</p>\
+              <br> <p style="color:grey; display:inline-block"> Start Date:&nbsp&nbsp&nbsp</p><p style="color:black; display:inline-block">'+ output.output[i].dateOfContract +'</p>\
+              <br> <p style="color:grey; display:inline-block"> Expiry Date:&nbsp&nbsp&nbsp</p><p style="color:black; display:inline-block">'+ output.output[i].dateOfExpiry +'</p>\
               </p>\
               </div>\
             </li>')

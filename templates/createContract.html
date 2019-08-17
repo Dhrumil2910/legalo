@@ -16,7 +16,6 @@
     </div>
 </div>
 
-
 <!-- Preloader -->
 <div class="progress">
     <div class="indeterminate"></div>
@@ -36,7 +35,7 @@
     </div>
     <div class="card-content">
         <div id="test1">
-            <h5>Service Provider Information</h5>
+            <h5> Service Provider Information <i class="tiny material-icons tooltipped" data-tooltip="What is a service provider? <br><br>  A service provider is a party or company <br> that offers professional services, such as marketing <br> services, catering services, consulting services,<br>  or advertising services.">info</i> </h5>
             <br>
             <p> Who is providing the services?</p>
             <div class="row valign-wrapper">
@@ -283,23 +282,26 @@
 
             <div class="row">
 
-                <div class="col s12">
+                <div class="col s8">
                     <h5>Right to Cancel</h5>
                     <br>
                     <p>Does the buyer have a statutory right to cancel the transaction?</p>
                     <p>
                         <label>
-                            <input class="with-gap" name="group3" type="radio" checked />
+                            <input class="with-gap" name="group3" value="Yes" type="radio" checked />
                             <span style="color: black">Yes</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input class="with-gap" name="group3" type="radio" checked />
+                            <input class="with-gap" name="group3" value="No"type="radio" />
                             <span style="color: black">No</span>
                         </label>
                     </p>
                 </div>
+                <div class="col s4 grey-text" align="justify">
+                        <b style="color: rgb(117, 114, 114)">What is the statutory right to cancel?</b><br><br>
+                        Federal and state laws allow buyers a 3-day "cooling off" period for certain sales, namely sales made and solicited at the buyer's home. If the transaction falls under one of these state or federal laws, the seller must disclose to the buyer in the contract of his or her right to cancel the transaction. In addition, the seller must provide 2 copies of a cancellation form.                 </div>
             </div>
             <br>
             <br>
@@ -312,13 +314,13 @@
                     <p>Do you want to include any additional provisions?</p>
                     <p>
                         <label>
-                            <input class="with-gap" name="group1" type="radio" checked />
+                            <input class="with-gap" name="group1" type="radio" value="Yes" checked />
                             <span style="color: black">Yes</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input class="with-gap" name="group1" type="radio" checked />
+                            <input class="with-gap" name="group1" type="radio" value="No" checked />
                             <span style="color: black">No</span>
                         </label>
                     </p>
@@ -348,68 +350,76 @@
 
         <div id="test7">
             <div class="row">
-                <div class="col s12">
+                <div class="col s8">
                     <h5>Disputes</h5>
                     <br>
                     <p>In the event a dispute arises, how will it be resolved?</p>
                     <p>
                         <label>
-                            <input class="with-gap" name="disputesRadio" type="radio" checked />
+                            <input class="with-gap" value="CourtLitigation" name="disputesRadio" type="radio" checked />
                             <span style="color: black">Court litigation</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input class="with-gap" name="disputesRadio" type="radio" checked />
+                            <input class="with-gap" value="Arbitration" name="disputesRadio" type="radio" checked />
                             <span style="color: black">Arbitration</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input class="with-gap" name="disputesRadio" type="radio" checked />
-                            <span style="color: black">mediation</span>
+                            <input class="with-gap" value="Mediation" name="disputesRadio" type="radio" checked />
+                            <span style="color: black">Mediation</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input class="with-gap" name="disputesRadio" type="radio" checked />
-                            <span style="color: black">mediation then arbitration</span>
+                            <input class="with-gap" value="MediationThenArbitration" name="disputesRadio" type="radio" checked />
+                            <span style="color: black">Mediation then Arbitration</span>
                         </label>
-                    </p>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col s12">
+                    </p><br>
                     <h5>Assignment</h5>
                     <br>
                     <p>Does either party need written permission to assign its rights to a third party?</p>
                     <p>
                         <label>
-                            <input class="with-gap" name="assignmentRadio" type="radio" checked />
+                            <input class="with-gap" value="No" name="assignmentRadio" type="radio" checked />
                             <span style="color: black">No</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input class="with-gap" name="assignmentRadio" type="radio" checked />
+                            <input class="with-gap" value="Buyer" name="assignmentRadio" type="radio" checked />
                             <span style="color: black">Yes, the buyer</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input class="with-gap" name="assignmentRadio" type="radio" checked />
+                            <input class="with-gap" value="ServiceProvider" name="assignmentRadio" type="radio" checked />
                             <span style="color: black">Yes, the service provider</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input class="with-gap" name="assignmentRadio" type="radio" checked />
+                            <input class="with-gap" value="Both" name="assignmentRadio" type="radio" checked />
                             <span style="color: black">Yes, both the buyer and the service provider</span>
                         </label>
                     </p>
                 </div>
+                <div class="col s4 grey-text" align="justify">
+                        <b style="color: rgb(117, 114, 114)">What are the different types of dispute resolution?</b><br><br>
+                        <b>Court litigation</b> is when a party files an action or claim in court and each side presents its case or defense
+                         in a trial for a judge or jury to determine a final outcome on the claim. The decision by the judge or jury is final and binding.<br><br>
+                        <b>Arbitration</b> is when an arbitrator, a neutral third party selected by the parties, evaluates the dispute and determines a settlement. The decision by the arbitrator is final and binding.<br><br>
+                        <b>Mediation</b>  is when a mediator, a neutral third party selected by the parties, tries to facilitate a compromise and agreement. The decision by the mediator is nonbinding.<br><br>
+                </div>
             </div>
+            <br>
+            <!-- <div class="row">
+                <div class="col s12">
+                    
+                </div>
+            </div> -->
             <br>
             <h5>Dates Of Contract</h5>
             <div class="row">
@@ -429,8 +439,8 @@
                 </div>
             </div>
             <div class="input-field">
-                <p>Contract Name</p>
-                <input id="contractName" placeholder="Enter Contract Name" type="text" class="validate">
+                <p>Contract Title</p>
+                <input id="contractTitle" placeholder="Enter Contract Title" type="text" class="validate">
             </div>
             <div class="input-field">
                 <p>Contract Description</p>

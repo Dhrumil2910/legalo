@@ -2,10 +2,14 @@ $(document).ready(function () {
     // Make all the buttons black by changing the class
     $('.progress').css("display", "none");
     $('.loader').css("display", "none");
+    $(document).ready(function () {
+        $('.tooltipped').tooltip({ html: true});
+    });
+
 
     path = location.pathname.replace("/", "")
     // check if the location is like contract/contractId
-    if(path.indexOf("contract") == -1){
+    if (path.indexOf("contract") == -1) {
         $('.' + path + 'Path').addClass('active activePath')
     }
 
@@ -20,7 +24,7 @@ $(document).ready(function () {
             url = empurl + '/' + currentIdentity
             $.ajaxCallaf(url, "GET", "", function (output1) {
                 if (output1.status) {
-                    
+
                     // Global variables accessible to any js file
                     // Current logged in user details
                     personId = output1.output.personId
@@ -59,7 +63,7 @@ $(document).ready(function () {
                 $('#currentDesignation').attr("href", "/uploadcard")
             }
             else {
-                $('.container').remove()
+                //$('.container').remove()
                 M.toast({ html: 'Please log in and upload the card.' })
                 $('#currentDesignation').append('<div class="chip loginGithub">Login with github</div>')
                 $('.currentLoggedInLoader').css("display", "none")

@@ -139,11 +139,12 @@ hr{
 
 
 .contractTitleList {
-    color: #e91e63;
+    color: black;
 }
 .chip {
     color: #e91e63;
 }
+
 
 .uploadCard {
     background: #e91e63;
@@ -197,6 +198,12 @@ input:disabled{
 
 textarea:disabled{
     color: grey !important; 
+}
+
+
+.headingTypes {
+    background: #e91e63 !important;
+    color: white;
 }
 
 

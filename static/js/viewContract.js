@@ -72,8 +72,8 @@ $(document).ready(function () {
                 $(".stagesInViewForm").append('<li class="collection-item card" id="'+ out.stages[i].stageId +'">\
                 <div class="card-content">\
                 <span class="card-title" style="color:#e91e63"><b>'+ out.stages[i].stageName + '</b> &nbsp\
-                <div class="chip  right fundEnd" id="'+ out.stages[i].stageId +'-fund">Fund Stage</div>\
-                <div class="chip white right">End Stage</div>\
+                <a href=""><div class="chip  right fundEnd" id="'+ out.stages[i].stageId +'-fund">Fund Stage</div></a>\
+                <a href=""><div class="chip white right endStage" id="'+ out.stages[i].stageId +'-end">End Stage</div></a>\
                 <div class="chip white right">Amount:&nbsp'+ out.stages[i].stageAmount + '</div></span><br><br>\
                 <p style="color: black">dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds '+ out.stages[i].stageDescription + '<br><br><br>\
                 Start Date:&nbsp'+ out.stages[i].dateOfStart+'<br>\
@@ -120,13 +120,42 @@ $(document).ready(function () {
         $('.loader').css("display", "block");
 
         // ajax POST call
-        $.ajaxCall(fundStageUrl, "POST", JSON.stringify(postDataFundStage), function (output) {
+        $.ajaxCallaf(fundStageUrl, "POST", JSON.stringify(postDataFundStage), function (output) {
             if(output.status){
                 M.toast({ html: 'Stage Funded' })
                 location.reload()
             }
             else {
                 M.toast({ html: 'Not able to fund the stage' })
+            }
+            // end the loader
+            $('.loader').css("display", "none");
+            
+        }) 
+        
+    })
+
+    // end a stage
+     // Fund a stage
+     $(document).on("click", ".endStage", function () {
+        stageId = parseInt($(this).attr("id").replace("-end",""))
+        endStageUrl = "http://localhost:3000/api/org.example.basic.endAStage"
+        postDataEndStage = {
+            "businessContract": "resource:org.example.basic.BusinessContract#"+out.businessContractId,
+            "stageId": stageId,
+            "dateOfCompletion": "End Date"
+        }
+        // start the loader
+        $('.loader').css("display", "block");
+
+        // ajax POST call
+        $.ajaxCallaf(endStageUrl, "POST", JSON.stringify(postDataEndStage), function (output) {
+            if(output.status){
+                M.toast({ html: 'Stage Ended' })
+                location.reload()
+            }
+            else {
+                M.toast({ html: 'Not able to end the stage' })
             }
             // end the loader
             $('.loader').css("display", "none");

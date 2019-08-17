@@ -96,7 +96,7 @@ $(document).ready(function () {
     })
 
 
-    $(document).on("click", "#fetchServicePro", function () {
+    $(document).on("click", ".submitContract", function () {
         // Service Provider Information
         serviceProviderId = $('#sfirst_name').val()
         // Buyer Information
@@ -104,8 +104,66 @@ $(document).ready(function () {
         // Services and Payment
         servicesObjList = allServices
         // Special Provisions
-        rightToCancel = s
+        rightToCancel = $("input[name='group3']:checked").val();
+        additionprovisionsIS = $("input[name='group1']:checked").val();
+        additionalProvisionsDesp = $("#additionalProvisions").val()
         // Final Details
+        disputes = $("input[name='disputesRadio']:checked").val();
+        assignment = $("input[name='assignmentRadio']:checked").val();
+        dateOfContract = $("#dateOfContract").val()
+        dateOfExpiry = $("#dateOfExpiry").val()
+        contractTitle = $("#contractTitle").val()
+        contractDesp = $("#contractDesp").val()
+        var d = new Date();
+        var n = d.getTime();
+
+        // Url for posting
+        postCreatContractUrl = "http://localhost:3000/api/org.example.basic.BusinessContract"
+        // Post body
+        postBodyCreateContract =  {
+            "$class": "org.example.basic.BusinessContract",
+            "businessContractId": n,
+            "contractTitle": contractTitle,
+            "additionalDescription":contractDesp,
+            "buyer": "resource:org.example.basic.Person#"+buyerId,
+            "serviceProvider": "resource:org.example.basic.Person#"+serviceProviderId,
+            "rightToCancel": rightToCancel,
+            "additionalProvisions": {
+                "$class": "org.example.basic.AdditionalProvisions",
+                "includeState": additionprovisionsIS,
+                "description": additionalProvisionsDesp
+            },
+            "disputes": disputes,
+            "assignment": assignment,
+            "dateOfContract": dateOfContract,
+            "dateOfExpiry": dateOfExpiry,
+            "stages": allServices,
+            "totalAmount": 0,
+            "rightToInspection": {
+                "$class": "org.example.basic.RightToInspection",
+                "rightToinspect": rightToCancel,
+                "daysBefore": "string",
+                "buyerOptions": "string"
+            },
+            "contractBalance": 0
+        } 
+
+        // Start the loader
+        $('.loader').css("display", "block");
+        
+        // ajax POST call
+        $.ajaxCallaf(postCreatContractUrl, "POST", JSON.stringify(postBodyCreateContract), function (output) {
+            if(output.status) {
+                $(location).attr('href', "/");
+            }
+            else {
+                M.toast({ html: 'Not Able to create contract' })
+            }
+
+            // close the loader
+            $('.loader').css("display", "none");
+        })
+
     })
 
 

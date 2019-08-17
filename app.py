@@ -25,6 +25,10 @@ def viewContract(contractId):
 def history():
     return render_template('history.html')
 
+@app.route('/types')
+def types():
+    return render_template('types.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
