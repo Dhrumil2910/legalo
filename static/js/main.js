@@ -65,7 +65,7 @@ $(document).ready(function () {
             else {
                 //$('.container').remove()
                 M.toast({ html: 'Please log in and upload the card.' })
-                $('#currentDesignation').append('<div class="chip loginGithub">Login with github</div>')
+                $('#currentDesignation').append('<div class="chip loginGithub">Login with Google</div>')
                 $('.currentLoggedInLoader').css("display", "none")
             }
 
