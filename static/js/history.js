@@ -8,6 +8,18 @@ $(document).ready(function () {
         $('.collapsible').collapsible();
     });
     
+
+    // dictionary for understanding the trasaction type
+    traAbb = {
+        "org.example.basic.endAStage": "Stage Ended",
+        "org.example.basic.fundAStage": "Stage Funded",
+        "AddAsset": "Business Contract Created",
+        "AddParticipant": "New User Added",
+        "ActivateCurrentIdentity": "New Identity activated",
+        "IssueIdentity": "New identity issued",
+        "StartBusinessNetwork": "Business Network Started"
+    }
+
     // get all the history
     // Historian Url
     hisUrl = "http://localhost:3000/api/system/historian"
@@ -40,7 +52,7 @@ $(document).ready(function () {
                 <ul class="collection">\
                     <li class="collection-item"><b>ID</b> : '+ output.output[i].transactionId + '</li>\
                     <li class="collection-item"><b>Transaction Type</b> : <div class="chip">\
-                    '+ output.output[i].transactionType.replace("org.hyperledger.composer.system.", "") + '</div></li>\
+                    '+ traAbb[output.output[i].transactionType.replace("org.hyperledger.composer.system.", "")] + '</div></li>\
                     <li class="collection-item"><b>Participant Invoking</b> :\
                     '+ output.output[i].participantInvoking + '</li>\
                     <li class="collection-item"><b>Identity Used</b> : '+ output.output[i].IdentityUsed + '</li>\

@@ -33,11 +33,12 @@ $(document).ready(function () {
     $('#bmobileNumber').val(mobileNumber)
     $('#bemail').val(emailAddress)
 
+    counterStageId = 0;
 
     // Add a stage
     $(document).on("click", ".addStage", function () {
         // Get all the values from the form first
-        stageId = $('#stageId').val()
+        stageId = counterStageId
         stageName = $('#stageName').val()
         stageAmount = $('#stageAmount').val()
         stageDesp = $('#stageDesp').val()
@@ -65,6 +66,7 @@ $(document).ready(function () {
         <p style="color: grey">'+ stageDesp + '<br>\
         </p>\
         </li>')
+        counterStageId ++; 
     })
 
     // Fetch the details of the service provider

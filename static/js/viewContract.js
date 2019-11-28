@@ -75,9 +75,9 @@ $(document).ready(function () {
                 <a href=""><div class="chip  right fundEnd" id="'+ out.stages[i].stageId +'-fund">Fund Stage</div></a>\
                 <a href=""><div class="chip white right endStage" id="'+ out.stages[i].stageId +'-end">End Stage</div></a>\
                 <div class="chip white right">Amount:&nbsp'+ out.stages[i].stageAmount + '</div></span><br><br>\
-                <p style="color: black">dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds dsdsds '+ out.stages[i].stageDescription + '<br><br><br>\
-                Start Date:&nbsp'+ out.stages[i].dateOfStart+'<br>\
-                End Date:&nbsp'+ out.stages[i].dateOfCompletion+'\
+                <p style="color: black">'+ out.stages[i].stageDescription + '<br><br><br>\
+                <div style="color:grey; display:inline-block">Start Date:&nbsp</div><div style="display:inline-block">'+ out.stages[i].dateOfStart+'</div><br>\
+                <div style="color:grey; display:inline-block">End Date:&nbsp</div><div style="display:inline-block">'+ out.stages[i].dateOfCompletion+'</div>\
                 </p></div>\
                 <div class="card-action">\
                 <div class="chip"> '+ finVar +'</div>\
