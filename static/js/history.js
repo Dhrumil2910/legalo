@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     // get all the history
     // Historian Url
-    hisUrl = "http://localhost:3000/api/system/historian"
+    hisUrl = "http://13.52.29.9:3000/api/system/historian"
 
     // Ajax call
     $.ajaxCall(hisUrl, "GET", "", function (output) {

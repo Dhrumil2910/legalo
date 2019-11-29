@@ -3,7 +3,7 @@ $(document).ready(function () {
     contractId = location.pathname.replace("/contract/", "")
 
     // Get the contract details
-    getContractUrl = "http://localhost:3000/api/org.example.basic.BusinessContract/" + contractId
+    getContractUrl = "http://13.52.29.9:3000/api/org.example.basic.BusinessContract/" + contractId
     //start the loader
     $('.loader').css("display", "block");
 
@@ -16,7 +16,7 @@ $(document).ready(function () {
             $('.headingBalanceContract').text("Contract Balance: "+out.contractBalance)
             // Get the service provider information
             serviceProviderId = out.serviceProvider.replace('resource:org.example.basic.Person#', '')
-            personGetUrl = "http://localhost:3001/api/org.example.basic.Person/" + serviceProviderId;
+            personGetUrl = "http://13.52.29.9:3001/api/org.example.basic.Person/" + serviceProviderId;
             $.ajaxCall(personGetUrl, "GET", "", function (output) {
                 if (output.status) {
                     // Feed the output into the corresponing input fields
@@ -36,7 +36,7 @@ $(document).ready(function () {
             })
             // Get the buyer information
             buyerId = out.buyer.replace('resource:org.example.basic.Person#', '')
-            personGetUrl = "http://localhost:3001/api/org.example.basic.Person/" + buyerId;
+            personGetUrl = "http://13.52.29.9:3001/api/org.example.basic.Person/" + buyerId;
             $.ajaxCall(personGetUrl, "GET", "", function (output) {
                 if (output.status) {
                     // Feed the output into the corresponing input fields
@@ -111,7 +111,7 @@ $(document).ready(function () {
     // Fund a stage
     $(document).on("click", ".fundEnd", function () {
         stageId = parseInt($(this).attr("id").replace("-fund",""))
-        fundStageUrl = "http://localhost:3000/api/org.example.basic.fundAStage"
+        fundStageUrl = "http://13.52.29.9:3000/api/org.example.basic.fundAStage"
         postDataFundStage = {
             "businessContract": "resource:org.example.basic.BusinessContract#"+out.businessContractId,
             "stageId": stageId
@@ -139,7 +139,7 @@ $(document).ready(function () {
      // Fund a stage
      $(document).on("click", ".endStage", function () {
         stageId = parseInt($(this).attr("id").replace("-end",""))
-        endStageUrl = "http://localhost:3000/api/org.example.basic.endAStage"
+        endStageUrl = "http://13.52.29.9:3000/api/org.example.basic.endAStage"
         postDataEndStage = {
             "businessContract": "resource:org.example.basic.BusinessContract#"+out.businessContractId,
             "stageId": stageId,

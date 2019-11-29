@@ -14,13 +14,13 @@ $(document).ready(function () {
     }
 
     // Get the current Participant
-    curParUrl = "http://localhost:3000/api/system/ping"
+    curParUrl = "http://13.52.29.9:3000/api/system/ping"
     $.ajaxCallaf(curParUrl, "GET", "", function (output) {
         if (output.status) {
             currentIdentityFull = output.output.participant
             currentIdentity = currentIdentityFull.replace('org.example.basic.Person#', '');
             // Get the Account balance
-            empurl = "http://localhost:3000/api/org.example.basic.Person"
+            empurl = "http://13.52.29.9:3000/api/org.example.basic.Person"
             url = empurl + '/' + currentIdentity
             $.ajaxCallaf(url, "GET", "", function (output1) {
                 if (output1.status) {
@@ -76,7 +76,7 @@ $(document).ready(function () {
     // Upload your card
     $(document).on("click", "#uploadCard", function () {
 
-        var baseUrl = "http://localhost:3000/api/wallet/import";
+        var baseUrl = "http://13.52.29.9:3000/api/wallet/import";
         var data = new FormData();
         data.append('card', $('#formfile')[0].files[0])
 

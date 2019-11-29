@@ -73,7 +73,7 @@ $(document).ready(function () {
     $(document).on("click", "#fetchServicePro", function () {
         first_name = $('#sfirst_name').val();
         // url for the call
-        personGetUrl = "http://localhost:3001/api/org.example.basic.Person/" + first_name;
+        personGetUrl = "http://13.52.29.9:3001/api/org.example.basic.Person/" + first_name;
         $('.progress').css("display", "block");
         // ajax GET call
         $.ajaxCall(personGetUrl, "GET", "", function (output) {
@@ -120,7 +120,7 @@ $(document).ready(function () {
         var n = d.getTime();
 
         // Url for posting
-        postCreatContractUrl = "http://localhost:3000/api/org.example.basic.BusinessContract"
+        postCreatContractUrl = "http://13.52.29.9:3000/api/org.example.basic.BusinessContract"
         // Post body
         postBodyCreateContract =  {
             "$class": "org.example.basic.BusinessContract",

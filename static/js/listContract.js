@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Get all the contracts
-    getContractsUrl = "http://localhost:3000/api/org.example.basic.BusinessContract/"
+    getContractsUrl = "http://13.52.29.9:3000/api/org.example.basic.BusinessContract/"
     $('.progress').css("display", "block");
     // ajax GET call
     $.ajaxCall(getContractsUrl, "GET", "", function (output) {
